@@ -1,6 +1,14 @@
 FROM alpine:edge
 
 ENV CURL_VERSION 7.50.1
+ENV CURL_USER curl
+ENV CURL_HOME /curl
+
+RUN addgroup -S $CURL_USER \
+    && adduser -S  \
+       -g $CURL_USER \
+       -h $CURL_HOME \
+       $CURL_USER
 
 RUN echo https://dl-cdn.alpinelinux.org/alpine/edge/testing >>/etc/apk/repositories && \
     apk add --update --no-cache openssl openssl-dev nghttp2-dev ca-certificates
@@ -27,5 +35,9 @@ RUN apk add --update --no-cache --virtual curldeps g++ make perl && \
     rm -r /var/cache/apk && \
     rm -r /usr/share/man && \
     apk del curldeps
+
+USER $CURL_USER
+
+WORKDIR $CURL_HOME
 
 ENTRYPOINT ["curl"]
