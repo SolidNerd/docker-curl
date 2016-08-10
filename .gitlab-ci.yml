@@ -2,6 +2,7 @@ image: docker:1.11.2
 
 stages:
 - build
+- test
 - prerelease
 - release
 
@@ -12,6 +13,11 @@ build:
   stage: build
   script:
     - docker build -t $CI_REGISTRY_IMAGE:CI_BUILD_REF_NAME .
+
+test-http2:
+  stage: test
+  script:
+    - docker run --rm $CI_REGISTRY_IMAGE:CI_BUILD_REF_NAME -s --http2 -I https://nghttp2.org
 
 prerelease:
   stage: prerelease
