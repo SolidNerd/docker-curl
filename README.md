@@ -1,6 +1,8 @@
 docker-curl
 ===========
 
+[![](https://images.microbadger.com/badges/image/solidnerd/curl.svg)](http://microbadger.com/images/solidnerd/curl "Get your own image badge on microbadger.com")
+
 curl in a container. This supports http2 as well.
 
 ## Current Version: [7.50.1](https://github.com/SolidNerd/docker-curl/blob/master/Dockerfile)
