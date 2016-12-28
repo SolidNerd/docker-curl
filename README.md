@@ -5,21 +5,21 @@ docker-curl
 
 curl in a container. This supports http2 as well.
 
-## Current Version: [7.52.0 ](https://github.com/SolidNerd/docker-curl/blob/master/Dockerfile)
+## Current Version: [7.52.1 ](https://github.com/SolidNerd/docker-curl/blob/master/Dockerfile)
 
 
 ## Quickstart
 With Docker Compose is a Quickstart very easy. Run the following command:
 
 ```
-docker run --rm -it solidnerd/curl:7.52.0  -s --http2 -I https://nghttp2.org
+docker run --rm -it solidnerd/curl:7.52.1  -s --http2 -I https://nghttp2.org
 ```
 
 ## Help
 Which commands can i use. Run this to get the information:
 
 ```
-docker run --rm -it solidnerd/curl:7.52.0  --help
+docker run --rm -it solidnerd/curl:7.52.1  --help
 ```
 
 
